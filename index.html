@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bronze Glow — Bronzeamento Artificial</title>
+<meta name="description" content="Bronze Glow — estúdio de bronzeamento artificial. Realce o seu melhor bronzeado com confiança. Agende sua sessão.">
+<meta property="og:title" content="Bronze Glow">
+<meta property="og:description" content="Bronzeamento artificial com sofisticação e cuidado.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23C9A667%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B140F; --ink-2:#2A2019;
+  --gold:#C6A15B; --gold-soft:#DCC796;
+  --nude:#E4D2BB; --paper:#F7F1E8;
+  --white:#FBF8F3;
+  --line: rgba(198,161,91,.35);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:inherit; margin:0; padding:0;}
+html{scroll-behavior:smooth; scroll-padding-top:76px;}
+body{font-family:'Jost',sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif; font-weight:500; line-height:1.15; color:var(--ink);}
+a{text-decoration:none; color:inherit;}
+img{max-width:100%; display:block;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+section{padding:100px 0;}
+@media(max-width:640px){section{padding:64px 0;}}
+.eyebrow{font-size:.78rem; letter-spacing:.14em; color:var(--gold); font-weight:500; margin-bottom:14px;}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:15px 32px; font-family:'Jost',sans-serif; font-size:.92rem; letter-spacing:.02em; border-radius:2px; cursor:pointer; border:1px solid transparent; transition:transform .25s ease, background .25s ease, color .25s ease;}
+.btn-primary{background:var(--ink); color:var(--white);}
+.btn-primary:hover{background:var(--gold); color:var(--ink);}
+.btn-outline{border-color:var(--ink); color:var(--ink);}
+.btn-outline:hover{background:var(--ink); color:var(--white);}
+.btn-gold{background:var(--gold); color:var(--ink);}
+.btn-gold:hover{transform:translateY(-2px);}
+
+/* NAV */
+header{position:fixed; top:0; left:0; right:0; z-index:500; padding-top:env(safe-area-inset-top,0px); background:rgba(247,241,232,.9); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+nav{max-width:1180px; margin:0 auto; padding:18px 24px; display:flex; align-items:center; justify-content:space-between;}
+.logo{font-family:'Cormorant Garamond',serif; font-size:1.55rem; letter-spacing:.03em;}
+.logo span{color:var(--gold);}
+.nav-links{display:flex; gap:34px; font-size:.92rem;}
+.nav-links a{position:relative; padding:4px 0;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s ease;}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{display:flex; align-items:center; gap:18px;}
+.burger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px;}
+.burger span{width:22px; height:1.5px; background:var(--ink); transition:.3s;}
+.mobile-menu{display:none; position:fixed; inset:0; background:var(--paper); z-index:600; padding:100px 32px 40px; flex-direction:column; gap:28px; font-size:1.3rem; font-family:'Cormorant Garamond',serif;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{padding:6px 0; border-bottom:1px solid var(--line);}
+.close-menu{position:absolute; top:24px; right:24px; background:none; border:none; font-size:1.6rem; cursor:pointer; padding-top:env(safe-area-inset-top,0px);}
+@media(max-width:900px){.nav-links{display:none;} .burger{display:flex;} .nav-cta .btn{display:none;}}
+
+/* HERO */
+.hero{position:relative; min-height:92vh; display:flex; align-items:flex-end; padding:0; margin-top:0;}
+.hero-bg{position:absolute; inset:0; background:linear-gradient(180deg, rgba(27,20,15,.35), rgba(27,20,15,.82)), url('https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;}
+.hero-inner{position:relative; z-index:2; color:var(--white); max-width:1180px; margin:0 auto; padding:140px 24px 90px; width:100%;}
+.hero-inner .eyebrow{color:var(--gold-soft);}
+.hero-inner h1{font-size:clamp(2.6rem,6vw,4.6rem); max-width:820px; color:var(--white);}
+.hero-inner p.sub{max-width:520px; margin:22px 0 38px; font-size:1.08rem; color:var(--nude);}
+.hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+.trust{margin-top:44px; font-size:.85rem; letter-spacing:.05em; color:var(--gold-soft); border-top:1px solid rgba(255,255,255,.2); padding-top:20px; max-width:560px;}
+
+/* ABOUT */
+.about-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;}
+.about-grid img{border-radius:2px; height:520px; object-fit:cover; width:100%;}
+.about-text h2{font-size:2.6rem; margin-bottom:22px;}
+.about-text p{margin-bottom:16px; color:var(--ink-2); max-width:480px;}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;} .about-grid img{height:360px;} .about-grid .img-col{order:-1;}}
+
+/* SERVICES */
+.section-head{text-align:center; max-width:600px; margin:0 auto 56px;}
+.section-head h2{font-size:2.6rem;}
+.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+@media(max-width:900px){.services-grid{grid-template-columns:1fr;}}
+.s-card{background:var(--white); border:1px solid var(--line); overflow:hidden; transition:transform .3s ease, box-shadow .3s ease; cursor:pointer;}
+.s-card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(27,20,15,.1);}
+.s-card img{height:230px; object-fit:cover;}
+.s-body{padding:26px;}
+.s-body h3{font-size:1.5rem; margin-bottom:10px;}
+.s-body p{color:var(--ink-2); font-size:.94rem; margin-bottom:18px;}
+.s-link{font-size:.85rem; letter-spacing:.04em; color:var(--gold); border-bottom:1px solid var(--gold); padding-bottom:2px;}
+
+/* modal */
+.modal-overlay{display:none; position:fixed; inset:0; background:rgba(27,20,15,.75); z-index:900; align-items:center; justify-content:center; padding:24px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--paper); max-width:560px; width:100%; max-height:86vh; overflow:auto; padding:40px; position:relative; border-top:3px solid var(--gold);}
+.modal-close{position:absolute; top:16px; right:18px; background:none; border:none; font-size:1.4rem; cursor:pointer;}
+.modal-box h3{font-size:1.9rem; margin-bottom:14px;}
+.modal-box dl{margin-top:18px;}
+.modal-box dt{font-weight:500; color:var(--gold); font-size:.82rem; letter-spacing:.03em; margin-top:14px;}
+.modal-box dd{color:var(--ink-2); font-size:.94rem; margin-top:4px;}
+
+/* GALLERY */
+.gallery-wrap{position:relative;}
+.carousel{display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; -webkit-overflow-scrolling:touch;}
+.carousel::-webkit-scrollbar{height:6px;}
+.carousel::-webkit-scrollbar-thumb{background:var(--gold); border-radius:4px;}
+.carousel figure{flex:0 0 320px; scroll-snap-align:start; position:relative; overflow:hidden; cursor:pointer;}
+.carousel img{height:400px; width:100%; object-fit:cover; transition:transform .5s ease;}
+.carousel figure:hover img{transform:scale(1.06);}
+.carousel figcaption{position:absolute; bottom:0; left:0; right:0; padding:16px; background:linear-gradient(0deg, rgba(27,20,15,.8), transparent); color:var(--white); font-size:.85rem; letter-spacing:.03em;}
+.gal-nav{display:flex; justify-content:center; gap:16px; margin-top:24px;}
+.gal-nav button{width:44px; height:44px; border-radius:50%; border:1px solid var(--ink); background:none; cursor:pointer; font-size:1.1rem;}
+.gal-nav button:hover{background:var(--ink); color:var(--white);}
+.lightbox{display:none; position:fixed; inset:0; background:rgba(15,11,8,.95); z-index:950; align-items:center; justify-content:center;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:88vw; max-height:82vh; object-fit:contain;}
+.lb-close{position:absolute; top:26px; right:30px; color:var(--white); font-size:1.8rem; background:none; border:none; cursor:pointer;}
+.lb-prev,.lb-next{position:absolute; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--white); font-size:2.2rem; cursor:pointer; padding:14px;}
+.lb-prev{left:8px;} .lb-next{right:8px;}
+
+/* CARE */
+.care-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+@media(max-width:900px){.care-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.care-grid{grid-template-columns:1fr;}}
+.care-card{border:1px solid var(--line); padding:28px 24px; background:var(--white);}
+.care-card h4{font-size:1.25rem; margin-bottom:10px;}
+.care-card p{font-size:.9rem; color:var(--ink-2);}
+.care-alert{margin-top:36px; border:1px solid var(--gold); background:rgba(198,161,91,.08); padding:24px 28px; font-size:.92rem; color:var(--ink-2);}
+.care-alert strong{color:var(--ink);}
+
+/* CURIOSITIES */
+.dark{background:var(--ink); color:var(--white);}
+.dark h2{color:var(--white);}
+.curio-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+@media(max-width:900px){.curio-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.curio-grid{grid-template-columns:1fr;}}
+.curio-card{border:1px solid rgba(255,255,255,.15); padding:26px 22px; opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+.curio-card.show{opacity:1; transform:none;}
+.curio-card h4{color:var(--gold-soft); font-size:1.1rem; margin-bottom:10px;}
+.curio-card p{font-size:.87rem; color:var(--nude);}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{width:100%; text-align:left; background:none; border:none; padding:22px 4px; font-family:'Cormorant Garamond',serif; font-size:1.25rem; display:flex; justify-content:space-between; cursor:pointer; color:var(--ink);}
+.faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.faq-a p{padding:0 4px 22px; color:var(--ink-2); font-size:.94rem; max-width:640px;}
+.faq-item.open .faq-a{max-height:200px;}
+.faq-item.open .faq-q .plus{transform:rotate(45deg);}
+.plus{transition:transform .3s ease; color:var(--gold);}
+
+/* BOOKING */
+.booking{background:var(--ink); color:var(--white); text-align:center;}
+.booking h2{color:var(--white); font-size:2.6rem;}
+.booking p{color:var(--nude); max-width:500px; margin:16px auto 34px;}
+.booking-info{display:flex; justify-content:center; gap:40px; margin-top:40px; flex-wrap:wrap; font-size:.9rem; color:var(--gold-soft);}
+
+/* LOCATIONS */
+.loc-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+@media(max-width:800px){.loc-grid{grid-template-columns:1fr;}}
+.loc-card{border:1px solid var(--line); background:var(--white); padding:32px;}
+.loc-card h3{font-size:1.5rem; margin-bottom:14px;}
+.loc-card p{font-size:.9rem; color:var(--ink-2); margin-bottom:6px;}
+.loc-btns{display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;}
+.loc-btns .btn{padding:11px 20px; font-size:.85rem;}
+
+/* INSTAGRAM */
+.insta{text-align:center;}
+.insta-tiles{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:40px;}
+@media(max-width:700px){.insta-tiles{grid-template-columns:1fr 1fr;}}
+.insta-tiles div{aspect-ratio:1; background:var(--nude); display:flex; align-items:center; justify-content:center; color:var(--ink-2); font-size:.8rem; overflow:hidden;}
+.insta-tiles img{width:100%;height:100%;object-fit:cover;}
+
+/* FOOTER */
+footer{background:#12100C; color:var(--nude); padding:70px 0 30px;}
+.foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px;}
+@media(max-width:800px){.foot-grid{grid-template-columns:1fr 1fr;}}
+footer h4{color:var(--gold-soft); font-size:.85rem; letter-spacing:.05em; margin-bottom:16px; font-family:'Jost',sans-serif; font-weight:500;}
+footer .logo{color:var(--white); margin-bottom:14px;}
+footer p{font-size:.87rem; color:#B9AB96; max-width:280px;}
+footer ul{list-style:none;}
+footer li{margin-bottom:10px; font-size:.88rem;}
+footer a:hover{color:var(--gold);}
+.foot-bottom{margin-top:56px; padding-top:24px; border-top:1px solid rgba(255,255,255,.1); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:.8rem; color:#8A7C68;}
+
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed; bottom:24px; right:20px; z-index:400; background:#1f8a54; color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(0,0,0,.3); font-size:1.5rem;}
+.wa-float{bottom:calc(24px + env(safe-area-inset-bottom,0px));}
+
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+.reveal.show{opacity:1; transform:none;}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important; scroll-behavior:auto !important;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#home" class="logo">Bronze<span>Glow</span></a>
+    <div class="nav-links">
+      <a href="#home">Início</a>
+      <a href="#about">Sobre</a>
+      <a href="#services">Serviços</a>
+      <a href="#gallery">Galeria</a>
+      <a href="#care">Cuidados</a>
+      <a href="#faq">FAQ</a>
+      <a href="#booking">Contato</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#booking" class="btn btn-primary">AGENDAR</a>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">&times;</button>
+  <a href="#home">Início</a>
+  <a href="#about">Sobre</a>
+  <a href="#services">Serviços</a>
+  <a href="#gallery">Galeria</a>
+  <a href="#care">Cuidados</a>
+  <a href="#faq">FAQ</a>
+  <a href="#booking">Contato</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">BRONZE GLOW · ESTÚDIO DE BRONZEAMENTO</div>
+    <h1>Realce o seu melhor bronzeado com confiança.</h1>
+    <p class="sub">Um estúdio pensado para cuidar da sua pele com técnica, elegância e atenção aos detalhes — do primeiro agendamento ao resultado final.</p>
+    <div class="hero-ctas">
+      <a href="#booking" class="btn btn-gold">AGENDAR MEU BRONZE</a>
+      <a href="#about" class="btn btn-outline" style="border-color:var(--white); color:var(--white);">CONHEÇA A BRONZE GLOW</a>
+    </div>
+    <div class="trust">Atendimento personalizado · Duas unidades · Profissionais especializados</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="img-col"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1000&auto=format&fit=crop" alt="Ambiente Bronze Glow"></div>
+    <div class="about-text">
+      <div class="eyebrow">SOBRE A BRONZE GLOW</div>
+      <h2>Sobre a Bronze Glow</h2>
+      <p>[Espaço reservado para o texto oficial: quem somos, a origem da ideia por trás da Bronze Glow e o propósito que nos move.]</p>
+      <p>[Espaço reservado: a experiência que queremos proporcionar a cada cliente, do acolhimento à sessão.]</p>
+      <p>[Espaço reservado: nossos diferenciais — técnica, produtos e cuidado individual.]</p>
+      <a href="#services" class="btn btn-outline">CONHEÇA NOSSOS SERVIÇOS</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--white);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="text-align:center;">O QUE OFERECEMOS</div>
+      <h2>Serviços de Bronzeamento</h2>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+    <div style="text-align:center; margin-top:44px;">
+      <a href="#booking" class="btn btn-primary">QUERO AGENDAR</a>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="serviceModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="eyebrow" id="modalEyebrow">SERVIÇO</div>
+    <h3 id="modalTitle"></h3>
+    <dl>
+      <dt>Como funciona</dt><dd id="modalHow"></dd>
+      <dt>Duração</dt><dd id="modalDuration"></dd>
+      <dt>Preparação</dt><dd id="modalPrep"></dd>
+      <dt>Cuidados</dt><dd id="modalCare"></dd>
+    </dl>
+    <div style="margin-top:24px;"><a href="#booking" class="btn btn-primary" onclick="document.getElementById('serviceModal').classList.remove('open')">QUERO AGENDAR</a></div>
+  </div>
+</div>
+
+<section id="gallery">
+  <div class="wrap gallery-wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="text-align:center;">GALERIA</div>
+      <h2>Galeria Bronze Glow</h2>
+    </div>
+    <div class="carousel" id="carousel"></div>
+    <div class="gal-nav">
+      <button id="galPrev" aria-label="Anterior">‹</button>
+      <button id="galNext" aria-label="Próximo">›</button>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose">&times;</button>
+  <button class="lb-prev" id="lbPrev">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-next" id="lbNext">›</button>
+</div>
+
+<section id="care" style="background:var(--white);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="text-align:center;">ORIENTAÇÕES</div>
+      <h2>Cuidados com o seu bronze</h2>
+    </div>
+    <div class="care-grid" id="careGrid"></div>
+    <div class="care-alert reveal">
+      <strong>Atenção:</strong> o bronzeamento artificial não é isento de riscos e nem sempre é indicado para todas as pessoas. Siga sempre as orientações da equipe Bronze Glow e informe condições de pele, alergias ou uso de medicamentos antes da sessão.
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="curiosities">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="text-align:center;">VOCÊ SABIA?</div>
+      <h2>Curiosidades</h2>
+    </div>
+    <div class="curio-grid" id="curioGrid"></div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="#faq" class="btn btn-outline" style="border-color:var(--gold-soft); color:var(--gold-soft);">VER MAIS DÚVIDAS</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="text-align:center;">DÚVIDAS FREQUENTES</div>
+      <h2>Perguntas Frequentes</h2>
+    </div>
+    <div id="faqList"></div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="eyebrow" style="text-align:center; color:var(--gold-soft);">AGENDAMENTO</div>
+    <h2>Agende seu horário</h2>
+    <p>Fale agora com a nossa equipe e garanta o melhor horário para sua sessão de bronzeamento.</p>
+    <a href="#" id="waMainBtn" target="_blank" class="btn btn-gold">FALAR NO WHATSAPP</a>
+    <div class="booking-info">
+      <span>📞 [TELEFONE]</span>
+      <span>🕒 [HORÁRIO DE ATENDIMENTO]</span>
+    </div>
+  </div>
+</section>
+
+<section id="locations" style="background:var(--white);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="text-align:center;">UNIDADES</div>
+      <h2>Encontre a Bronze Glow</h2>
+    </div>
+    <div class="loc-grid" id="locGrid"></div>
+  </div>
+</section>
+
+<section class="insta">
+  <div class="wrap">
+    <div class="eyebrow">SIGA A BRONZE GLOW</div>
+    <h2>@bronzeglow</h2>
+    <div class="insta-tiles">
+      <div>Foto</div><div>Foto</div><div>Foto</div><div>Foto</div>
+    </div>
+    <div style="margin-top:32px;"><a href="#" id="instaBtn" target="_blank" class="btn btn-primary">SEGUIR NO INSTAGRAM</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="logo">Bronze<span style="color:var(--gold);">Glow</span></div>
+      <p>Bronzeamento artificial com sofisticação, técnica e cuidado — em duas unidades preparadas para receber você.</p>
+    </div>
+    <div>
+      <h4>NAVEGAÇÃO</h4>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#about">Sobre nós</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#gallery">Galeria</a></li>
+        <li><a href="#care">Cuidados</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>CONTATO</h4>
+      <ul>
+        <li>[EMAIL]</li>
+        <li>[TELEFONE]</li>
+        <li><a href="#" id="waFootBtn" target="_blank">WhatsApp</a></li>
+        <li><a href="#" id="instaFootBtn" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>LEGAL</h4>
+      <ul>
+        <li><a href="#privacy">Política de Privacidade</a></li>
+        <li><a href="#terms">Termos de Uso</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Bronze Glow. Todos os direitos reservados.</span>
+    <span>Unidade 01 · Unidade 02</span>
+  </div>
+</footer>
+
+<a href="#" id="waFloatBtn" target="_blank" class="wa-float" aria-label="WhatsApp">💬</a>
+
+<script>
+// ---- CONFIG CENTRALIZADA (substituir pelos dados reais) ----
+const CONFIG = {
+  WHATSAPP_NUMBER: "5500000000000",
+  WHATSAPP_MESSAGE: "Olá! Vim pelo site da Bronze Glow e gostaria de agendar meu horário.",
+  INSTAGRAM_URL: "https://instagram.com/bronzeglow",
+  UNIT_01: { name:"Bronze Glow — Unidade 01", address:"[ENDEREÇO UNIDADE 01]", phone:"[TELEFONE]", whatsapp:"5500000000000", hours:"[HORÁRIO DE FUNCIONAMENTO]", maps:"https://maps.google.com" },
+  UNIT_02: { name:"Bronze Glow — Unidade 02", address:"[ENDEREÇO UNIDADE 02]", phone:"[TELEFONE]", whatsapp:"5500000000000", hours:"[HORÁRIO DE FUNCIONAMENTO]", maps:"https://maps.google.com" }
+};
+function waLink(number, msg){ return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`; }
+document.getElementById('waMainBtn').href = waLink(CONFIG.WHATSAPP_NUMBER, CONFIG.WHATSAPP_MESSAGE);
+document.getElementById('waFootBtn').href = waLink(CONFIG.WHATSAPP_NUMBER, CONFIG.WHATSAPP_MESSAGE);
+document.getElementById('waFloatBtn').href = waLink(CONFIG.WHATSAPP_NUMBER, CONFIG.WHATSAPP_MESSAGE);
+document.getElementById('instaBtn').href = CONFIG.INSTAGRAM_URL;
+document.getElementById('instaFootBtn').href = CONFIG.INSTAGRAM_URL;
+
+// mobile menu
+const burger=document.getElementById('burgerBtn'), menu=document.getElementById('mobileMenu'), closeM=document.getElementById('closeMenu');
+burger.onclick=()=>menu.classList.add('open');
+closeM.onclick=()=>menu.classList.remove('open');
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
+
+// services
+const SERVICES=[
+ {name:"Bronzeamento Corporal", img:"https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop", desc:"Aplicação uniforme para um bronzeado natural em todo o corpo.", how:"[Descrição do procedimento — a preencher]", duration:"[A definir]", prep:"[A definir]", care:"[A definir]"},
+ {name:"Bronzeamento Facial", img:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop", desc:"Tratamento específico para uma tez uniforme e luminosa.", how:"[Descrição do procedimento — a preencher]", duration:"[A definir]", prep:"[A definir]", care:"[A definir]"},
+ {name:"Manutenção", img:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop", desc:"Retoques para prolongar e uniformizar o resultado.", how:"[Descrição do procedimento — a preencher]", duration:"[A definir]", prep:"[A definir]", care:"[A definir]"},
+];
+const sGrid=document.getElementById('servicesGrid');
+SERVICES.forEach((s,i)=>{
+  const el=document.createElement('div'); el.className='s-card reveal';
+  el.innerHTML=`<img src="${s.img}" alt="${s.name}" loading="lazy"><div class="s-body"><h3>${s.name}</h3><p>${s.desc}</p><span class="s-link">SAIBA MAIS</span></div>`;
+  el.onclick=()=>openModal(s);
+  sGrid.appendChild(el);
+});
+function openModal(s){
+  document.getElementById('modalTitle').textContent=s.name;
+  document.getElementById('modalHow').textContent=s.how;
+  document.getElementById('modalDuration').textContent=s.duration;
+  document.getElementById('modalPrep').textContent=s.prep;
+  document.getElementById('modalCare').textContent=s.care;
+  document.getElementById('serviceModal').classList.add('open');
+}
+document.getElementById('modalClose').onclick=()=>document.getElementById('serviceModal').classList.remove('open');
+document.getElementById('serviceModal').onclick=(e)=>{if(e.target.id==='serviceModal')e.currentTarget.classList.remove('open');};
+
+// gallery
+const GALLERY=[
+ {img:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900&auto=format&fit=crop", cat:"Resultados"},
+ {img:"https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=900&auto=format&fit=crop", cat:"Estilos de bronze"},
+ {img:"https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=900&auto=format&fit=crop", cat:"Experiências"},
+ {img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=900&auto=format&fit=crop", cat:"Resultados"},
+ {img:"https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=900&auto=format&fit=crop", cat:"Estilos de bronze"},
+];
+const carousel=document.getElementById('carousel');
+GALLERY.forEach((g,i)=>{
+  const f=document.createElement('figure');
+  f.innerHTML=`<img src="${g.img}" alt="${g.cat}" loading="lazy"><figcaption>${g.cat}</figcaption>`;
+  f.onclick=()=>openLightbox(i);
+  carousel.appendChild(f);
+});
+document.getElementById('galPrev').onclick=()=>carousel.scrollBy({left:-336, behavior:'smooth'});
+document.getElementById('galNext').onclick=()=>carousel.scrollBy({left:336, behavior:'smooth'});
+let lbIndex=0;
+function openLightbox(i){ lbIndex=i; document.getElementById('lbImg').src=GALLERY[i].img; document.getElementById('lightbox').classList.add('open'); }
+document.getElementById('lbClose').onclick=()=>document.getElementById('lightbox').classList.remove('open');
+document.getElementById('lbPrev').onclick=()=>{lbIndex=(lbIndex-1+GALLERY.length)%GALLERY.length; document.getElementById('lbImg').src=GALLERY[lbIndex].img;};
+document.getElementById('lbNext').onclick=()=>{lbIndex=(lbIndex+1)%GALLERY.length; document.getElementById('lbImg').src=GALLERY[lbIndex].img;};
+document.getElementById('lightbox').onclick=(e)=>{if(e.target.id==='lightbox')e.currentTarget.classList.remove('open');};
+
+// care
+const CARE=[
+ {t:"Antes da sessão", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
+ {t:"Durante o procedimento", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
+ {t:"Após a sessão", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
+ {t:"Preparação da pele", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
+ {t:"Manutenção do resultado", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
+ {t:"Precauções importantes", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
+];
+const careGrid=document.getElementById('careGrid');
+CARE.forEach(c=>{const el=document.createElement('div'); el.className='care-card reveal'; el.innerHTML=`<h4>${c.t}</h4><p>${c.d}</p>`; careGrid.appendChild(el);});
+
+// curiosities
+const CURIO=[
+ {t:"Preparação da pele", d:"A esfoliação prévia ajuda a uniformizar a aplicação."},
+ {t:"Duração do resultado", d:"O tempo de duração varia de pessoa para pessoa."},
+ {t:"Hidratação", d:"Manter a pele hidratada prolonga o efeito do bronzeado."},
+ {t:"Manutenção", d:"Retoques periódicos ajudam a manter a cor uniforme."},
+];
+const curioGrid=document.getElementById('curioGrid');
+CURIO.forEach(c=>{const el=document.createElement('div'); el.className='curio-card'; el.innerHTML=`<h4>${c.t}</h4><p>${c.d}</p>`; curioGrid.appendChild(el);});
+
+// faq
+const FAQ=[
+ {q:"Preciso agendar?", a:"Sim, recomendamos sempre agendar previamente para garantir seu horário."},
+ {q:"Como funciona a primeira sessão?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
+ {q:"Quanto tempo dura uma sessão?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
+ {q:"O que devo fazer antes do procedimento?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
+ {q:"Quais cuidados devo ter depois?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
+ {q:"Posso tomar banho depois?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
+ {q:"Quanto tempo dura o resultado?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
+ {q:"Quando posso fazer manutenção?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
+ {q:"O que devo levar para a sessão?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
+ {q:"Existem contraindicações?", a:"[Resposta a ser preenchida pela equipe Bronze Glow — consulte sempre a orientação profissional]"},
+];
+const faqList=document.getElementById('faqList');
+FAQ.forEach(f=>{
+  const item=document.createElement('div'); item.className='faq-item';
+  item.innerHTML=`<button class="faq-q">${f.q}<span class="plus">+</span></button><div class="faq-a"><p>${f.a}</p></div>`;
+  item.querySelector('.faq-q').onclick=()=>item.classList.toggle('open');
+  faqList.appendChild(item);
+});
+
+// locations
+function locCard(u){
+  const el=document.createElement('div'); el.className='loc-card reveal';
+  el.innerHTML=`<h3>${u.name}</h3><p>📍 ${u.address}</p><p>📞 ${u.phone}</p><p>🕒 ${u.hours}</p>
+  <div class="loc-btns"><a href="${u.maps}" target="_blank" class="btn btn-outline">COMO CHEGAR</a><a href="${waLink(u.whatsapp, CONFIG.WHATSAPP_MESSAGE)}" target="_blank" class="btn btn-primary">AGENDAR</a></div>`;
+  return el;
+}
+document.getElementById('locGrid').appendChild(locCard(CONFIG.UNIT_01));
+document.getElementById('locGrid').appendChild(locCard(CONFIG.UNIT_02));
+
+// scroll reveal
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});},{threshold:.15});
+document.querySelectorAll('.reveal, .curio-card').forEach(el=>io.observe(el));
+
+// header shadow on scroll (subtle)
+window.addEventListener('scroll', ()=>{
+  document.querySelector('header').style.boxShadow = window.scrollY>10 ? '0 4px 20px rgba(27,20,15,.06)' : 'none';
+});
+</script>
+</body>
+</html>
