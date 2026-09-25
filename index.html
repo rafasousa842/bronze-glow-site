@@ -440,7 +440,7 @@ menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'
 const SERVICES=[
  {name:"Bronzeamento Corporal", img:"https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop", desc:"Bronzeamento uniforme e personalizado para realçar o tom da pele com naturalidade.", how:"O procedimento é realizado de forma personalizada, respeitando o seu tom de pele e o resultado desejado. Cada etapa é pensada para proporcionar um bronzeado uniforme e valorizar a sua pele.", duration:"A duração é definida pela equipe de acordo com o procedimento e a avaliação realizada no atendimento.", prep:"Antes da sessão, é importante estar com a pele limpa, sem hidratantes, óleos, perfumes ou outros produtos que possam interferir no procedimento. As orientações completas são passadas pela equipe antes do atendimento.", care:"Após o procedimento, siga as orientações da equipe para preservar o resultado e manter a pele bem cuidada e hidratada."},
  {name:"Bronzeamento com Fitagem", img:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop", desc:"Bronzeamento com marcação personalizada por fitagem, criando um resultado elegante e definido.", how:"O procedimento é realizado com fitagem personalizada, criando a marcação desejada antes do bronzeamento. A técnica permite um resultado definido, harmonioso e personalizado.", duration:"A duração é definida pela equipe de acordo com o procedimento e a avaliação realizada no atendimento.", prep:"Compareça com a pele limpa, sem cremes, óleos ou produtos que possam interferir no procedimento. As orientações completas são passadas pela equipe antes da sessão.", care:"Após o procedimento, siga as orientações da equipe para cuidar da pele e preservar a uniformidade e a aparência do bronzeado."},
- {name:"Bronzeamento com Biquíni", img:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop", desc:"Bronzeamento personalizado com marcação de biquíni para um resultado uniforme e natural.", how:"A duração é definida pela equipe de acordo com o procedimento e a avaliação realizada no atendimento.", duration:"[A definir]", prep:"[A definir]", care:"[A definir]"},
+ {name:"Bronzeamento com Biquíni", img:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop", desc:"Bronzeamento personalizado com marcação de biquíni para um resultado uniforme e natural.", how:"O procedimento é realizado com a marcação do biquíni, proporcionando um bronzeado personalizado e valorizando o contorno escolhido pela cliente.", duration:"A duração é definida pela equipe de acordo com o procedimento e a avaliação realizada no atendimento.", prep:"Compareça com a pele limpa, sem cremes, óleos ou outros produtos que possam interferir no procedimento. A equipe orientará você sobre todos os cuidados necessários antes da sessão.", care:"Após o procedimento, siga as orientações da equipe e mantenha a pele hidratada para preservar o resultado e cuidar da pele."},
 ];
 const sGrid=document.getElementById('servicesGrid');
 SERVICES.forEach((s,i)=>{
@@ -486,22 +486,22 @@ document.getElementById('lightbox').onclick=(e)=>{if(e.target.id==='lightbox')e.
 
 // care
 const CARE=[
- {t:"Antes da sessão", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
- {t:"Durante o procedimento", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
- {t:"Após a sessão", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
- {t:"Preparação da pele", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
- {t:"Manutenção do resultado", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
- {t:"Precauções importantes", d:"[Orientações gerais a preencher pela equipe Bronze Glow]"},
+ {t:"Antes da sessão", d:"Chegue à sessão com a pele limpa e seca, sem cremes, óleos, perfumes ou desodorantes na região que será bronzeada. Use roupas confortáveis e siga as orientações da equipe para obter um resultado mais uniforme."},
+ {t:"Durante o procedimento", d:"Durante a sessão, siga atentamente as orientações da equipe Bronze Glow. O posicionamento e os cuidados indicados são importantes para garantir uma aplicação uniforme e um resultado bonito e natural."},
+ {t:"Após a sessão", d:"Evite atrito, suor excessivo e contato com água pelo período indicado pela equipe. Respeite o tempo recomendado antes do banho e mantenha a pele hidratada para ajudar na uniformidade e na durabilidade do bronzeado."},
+ {t:"Preparação da pele", d:"Para um resultado mais uniforme, mantenha a pele bem hidratada nos dias anteriores à sessão. A preparação adequada pode incluir esfoliação conforme a orientação da equipe, evitando procedimentos agressivos ou realizados muito próximo do atendimento."},
+ {t:"Manutenção do resultado", d:"Para prolongar a duração do seu bronzeado, mantenha a pele bem hidratada e siga os cuidados recomendados pela equipe Bronze Glow. A durabilidade pode variar de acordo com cada pele e com a rotina de cuidados. Quando desejar renovar o resultado, programe sua próxima sessão conforme a orientação da equipe. os que possam interferir no procedimento. Em caso de irritação, desconforto ou reação inesperada, interrompa o procedimento e procure orientação profissional."},
+ {t:"Precauções importantes", d:"Informe à equipe sobre alergias, sensibilidades, alterações na pele e uso de medicamentos ou produtos que possam interferir no procedimento. Em caso de irritação, desconforto ou reação inesperada, interrompa o procedimento e procure orientação profissional."},
 ];
 const careGrid=document.getElementById('careGrid');
 CARE.forEach(c=>{const el=document.createElement('div'); el.className='care-card reveal'; el.innerHTML=`<h4>${c.t}</h4><p>${c.d}</p>`; careGrid.appendChild(el);});
 
 // curiosities
 const CURIO=[
- {t:"Preparação da pele", d:"A esfoliação prévia ajuda a uniformizar a aplicação."},
- {t:"Duração do resultado", d:"O tempo de duração varia de pessoa para pessoa."},
- {t:"Hidratação", d:"Manter a pele hidratada prolonga o efeito do bronzeado."},
- {t:"Manutenção", d:"Retoques periódicos ajudam a manter a cor uniforme."},
+ {t:"Preparação da pele", d:"Você sabia que a preparação da pele influencia diretamente no resultado do bronzeado? Uma pele bem cuidada, hidratada e preparada favorece uma aplicação mais uniforme e um acabamento mais bonito. A esfoliação, quando indicada e realizada no momento adequado, também pode contribuir para uma superfície mais regular e pronta para receber o bronzeamento."},
+ {t:"Duração do resultado", d:"Você sabia que a duração do bronzeado pode variar de pessoa para pessoa? A renovação natural da pele, os hábitos diários e os cuidados após a sessão influenciam diretamente na durabilidade do resultado. Por isso, cada pele possui seu próprio tempo para manter o bronzeado."},
+ {t:"Hidratação", d:"Você sabia que a hidratação é uma das grandes aliadas para preservar o bronzeado? Manter a pele hidratada ajuda a preservar sua aparência uniforme e bem cuidada durante o processo natural de renovação da pele. Uma rotina de hidratação adequada contribui para que o bronzeado permaneça bonito por mais tempo."},
+ {t:"Manutenção", d:"Você sabia que a manutenção é o segredo para manter a aparência do bronzeado sempre renovada? Respeitar o intervalo adequado entre as sessões permite renovar o resultado de maneira planejada e de acordo com as características de cada pele. Na Bronze Glow, a equipe orienta o melhor momento para sua próxima sessão, considerando seu resultado e seus objetivos."},
 ];
 const curioGrid=document.getElementById('curioGrid');
 CURIO.forEach(c=>{const el=document.createElement('div'); el.className='curio-card'; el.innerHTML=`<h4>${c.t}</h4><p>${c.d}</p>`; curioGrid.appendChild(el);});
