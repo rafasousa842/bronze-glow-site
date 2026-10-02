@@ -346,7 +346,7 @@ footer a:hover{color:var(--gold);}
     <a href="#" id="waMainBtn" target="_blank" class="btn btn-gold">FALAR NO WHATSAPP</a>
     <div class="booking-info">
       <span>📞 [TELEFONE]</span>
-      <span>🕒 [HORÁRIO DE ATENDIMENTO]</span>
+      <span>🕒 Das 08h00 ás 20h00 </span>
     </div>
   </div>
 </section>
@@ -420,8 +420,8 @@ const CONFIG = {
   WHATSAPP_NUMBER: "5500000000000",
   WHATSAPP_MESSAGE: "Olá! Vim pelo site da Bronze Glow e gostaria de agendar meu horário.",
   INSTAGRAM_URL: "https://instagram.com/bronzeglow",
-  UNIT_01: { name:"Bronze Glow — Unidade 01", address:"[ENDEREÇO UNIDADE 01]", phone:"[TELEFONE]", whatsapp:"5500000000000", hours:"[HORÁRIO DE FUNCIONAMENTO]", maps:"https://maps.google.com" },
-  UNIT_02: { name:"Bronze Glow — Unidade 02", address:"[ENDEREÇO UNIDADE 02]", phone:"[TELEFONE]", whatsapp:"5500000000000", hours:"[HORÁRIO DE FUNCIONAMENTO]", maps:"https://maps.google.com" }
+  UNIT_01: { name:"Bronze Glow — Iguatemi", address:"Rua Arnaldo Victaliano 916, Pres. Medici, Ribeirão Preto", phone:"[TELEFONE]", whatsapp:"5500000000000", hours:"Das 08h00 ás 20h00", maps:"https://maps.google.com" },
+  UNIT_02: { name:"Bronze Glow — Irajá", address:"Rua Antonio Ache 334, Sala 05, Ribeirão Preto", phone:"[TELEFONE]", whatsapp:"5500000000000", hours:"Das 08h00 ás 20h00", maps:"https://maps.google.com" }
 };
 function waLink(number, msg){ return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`; }
 document.getElementById('waMainBtn').href = waLink(CONFIG.WHATSAPP_NUMBER, CONFIG.WHATSAPP_MESSAGE);
@@ -509,15 +509,15 @@ CURIO.forEach(c=>{const el=document.createElement('div'); el.className='curio-ca
 // faq
 const FAQ=[
  {q:"Preciso agendar?", a:"Sim, recomendamos sempre agendar previamente para garantir seu horário."},
- {q:"Como funciona a primeira sessão?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
- {q:"Quanto tempo dura uma sessão?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
- {q:"O que devo fazer antes do procedimento?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
- {q:"Quais cuidados devo ter depois?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
- {q:"Posso tomar banho depois?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
- {q:"Quanto tempo dura o resultado?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
- {q:"Quando posso fazer manutenção?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
- {q:"O que devo levar para a sessão?", a:"[Resposta a ser preenchida pela equipe Bronze Glow]"},
- {q:"Existem contraindicações?", a:"[Resposta a ser preenchida pela equipe Bronze Glow — consulte sempre a orientação profissional]"},
+ {q:"Como funciona a primeira sessão?", a:"Na primeira sessão, nossa equipe conversa com você para entender suas expectativas e orientar sobre o procedimento. Também explicamos todos os cuidados necessários antes e depois do bronzeamento e ajudamos você a escolher a melhor opção de marcação. Após a preparação, você realiza o procedimento na máquina vertical, sempre seguindo as orientações da nossa equipe. Como o bronzeamento é gradual, o resultado pode evoluir ao longo das sessões, respeitando a resposta individual da sua pele."},
+ {q:"Quanto tempo dura uma sessão?", a:"A duração da sessão pode variar de acordo com o procedimento escolhido e a orientação da nossa equipe. Antes de iniciar, explicamos todo o processo e definimos o tempo adequado para o seu atendimento."},
+ {q:"O que devo fazer antes do procedimento?", a:"Recomendamos que a pele esteja limpa, seca e sem produtos como hidratantes, óleos, perfumes ou desodorantes na região que será bronzeada. Também é importante seguir as orientações passadas pela nossa equipe antes da sessão."},
+ {q:"Quais cuidados devo ter depois?", a:"Após a sessão, siga as orientações da nossa equipe e evite atividades que possam remover ou alterar a marcação durante o período indicado. Mantenha a pele hidratada conforme a orientação recebida e evite produtos que possam interferir no resultado."},
+ {q:"Posso tomar banho depois?", a:"O tempo recomendado para o primeiro banho depende do procedimento realizado e da técnica utilizada. Nossa equipe orientará você sobre o período ideal para preservar a marcação e obter um resultado uniforme."},
+ {q:"Quanto tempo dura o resultado?", a:"A duração do resultado pode variar de acordo com cada pessoa, o tipo de procedimento realizado e os cuidados após a sessão. Uma boa hidratação da pele e os cuidados recomendados ajudam a manter o bronzeado por mais tempo."},
+ {q:"Quando posso fazer manutenção?", a:"O intervalo para a manutenção varia de acordo com a resposta da sua pele e o resultado desejado. Durante o atendimento, nossa equipe orientará o período mais adequado para realizar uma nova sessão."},
+ {q:"O que devo levar para a sessão?", a:"Para a sessão, leve seus itens pessoais necessários e, se possível, utilize roupas confortáveis e mais soltas para o momento após o procedimento. Nossa equipe também orientará sobre qualquer item específico necessário para a técnica escolhida."},
+ {q:"Existem contraindicações?", a:"Sim. O procedimento pode não ser indicado para todas as pessoas. Algumas condições de saúde, medicamentos e características da pele podem exigir avaliação e orientação profissional antes da sessão. Por isso, realizamos uma anamnese e recomendamos informar corretamente qualquer condição de saúde ou medicamento utilizado."},
 ];
 const faqList=document.getElementById('faqList');
 FAQ.forEach(f=>{
