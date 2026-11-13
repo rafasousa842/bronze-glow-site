@@ -345,8 +345,8 @@ footer a:hover{color:var(--gold);}
     <p>Fale agora com a nossa equipe e garanta o melhor horário para sua sessão de bronzeamento.</p>
     <a href="#" id="waMainBtn" target="_blank" class="btn btn-gold">FALAR NO WHATSAPP</a>
     <div class="booking-info">
-      <span>📞 [TELEFONE]</span>
-      <span>🕒 Das 08h00 ás 20h00 </span>
+      <span>📞 <a href="tel:+5516991527815">(16) 99152-7815</a></span>
+      <span>🕒 Segunda a sábado, das 08h às 20h</span>
     </div>
   </div>
 </section>
@@ -392,8 +392,8 @@ footer a:hover{color:var(--gold);}
     <div>
       <h4>CONTATO</h4>
       <ul>
-        <li>[EMAIL]</li>
-        <li>[TELEFONE]</li>
+        <li><a href="mailto:bronzeglow8@gmail.com">bronzeglow8@gmail.com</a></li>
+        <li><a href="tel:+5516991527815">(16) 99152-7815</a></li>
         <li><a href="#" id="waFootBtn" target="_blank">WhatsApp</a></li>
         <li><a href="#" id="instaFootBtn" target="_blank">Instagram</a></li>
       </ul>
@@ -417,12 +417,28 @@ footer a:hover{color:var(--gold);}
 <script>
 // ---- CONFIG CENTRALIZADA (substituir pelos dados reais) ----
 const CONFIG = {
-  WHATSAPP_NUMBER: "5500000000000",
+  WHATSAPP_NUMBER: "5516991527815",
   WHATSAPP_MESSAGE: "Olá! Vim pelo site da Bronze Glow e gostaria de agendar meu horário.",
   INSTAGRAM_URL: "https://instagram.com/bronzeglow",
-  UNIT_01: { name:"Bronze Glow — Iguatemi", address:"Rua Arnaldo Victaliano 916, Pres. Medici, Ribeirão Preto", phone:"[TELEFONE]", whatsapp:"5500000000000", hours:"Das 08h00 ás 20h00", maps:"https://maps.google.com" },
-  UNIT_02: { name:"Bronze Glow — Irajá", address:"Rua Antonio Ache 334, Sala 05, Ribeirão Preto", phone:"[TELEFONE]", whatsapp:"5500000000000", hours:"Das 08h00 ás 20h00", maps:"https://maps.google.com" }
-};
+  UNIT_01: {
+    name:"Bronze Glow — Iguatemi",
+    address:"R. Arnaldo Victaliano, 916 - Jardim Palma Travassos, Ribeirão Preto - SP, 14091-220",
+    phone:"(16) 99152-7815",
+    whatsapp:"5516991527815",
+    hours:"Segunda a sábado, das 08h às 20h",
+    maps:"https://maps.app.goo.gl/2p4Q1CQ2vfYjjMeZA",
+    bookingMessage:"Olá! Vim pelo site da Bronze Glow e gostaria de agendar um horário na unidade Iguatemi."
+  },
+  UNIT_02: {
+    name:"Bronze Glow — Irajá",
+    address:"R. Antônio Aché, 334 - Sala 05 - Irajá, Ribeirão Preto - SP, 14020-600",
+    phone:"(16) 99152-7815",
+    whatsapp:"5516991527815",
+    hours:"Segunda a sábado, das 08h às 20h",
+    maps:"https://maps.app.goo.gl/m2K6NZKxogvhS9tU8",
+    bookingMessage:"Olá! Vim pelo site da Bronze Glow e gostaria de agendar um horário na unidade Irajá."
+  }
+}
 function waLink(number, msg){ return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`; }
 document.getElementById('waMainBtn').href = waLink(CONFIG.WHATSAPP_NUMBER, CONFIG.WHATSAPP_MESSAGE);
 document.getElementById('waFootBtn').href = waLink(CONFIG.WHATSAPP_NUMBER, CONFIG.WHATSAPP_MESSAGE);
@@ -531,7 +547,7 @@ FAQ.forEach(f=>{
 function locCard(u){
   const el=document.createElement('div'); el.className='loc-card reveal';
   el.innerHTML=`<h3>${u.name}</h3><p>📍 ${u.address}</p><p>📞 ${u.phone}</p><p>🕒 ${u.hours}</p>
-  <div class="loc-btns"><a href="${u.maps}" target="_blank" class="btn btn-outline">COMO CHEGAR</a><a href="${waLink(u.whatsapp, CONFIG.WHATSAPP_MESSAGE)}" target="_blank" class="btn btn-primary">AGENDAR</a></div>`;
+  <div class="loc-btns"><a href="${u.maps}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">COMO CHEGAR</a><a href="${waLink(u.whatsapp, u.bookingMessage)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">AGENDAR</a></div>`;
   return el;
 }
 document.getElementById('locGrid').appendChild(locCard(CONFIG.UNIT_01));
